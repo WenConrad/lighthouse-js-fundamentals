@@ -1,9 +1,9 @@
-function loopyLighthouse(range, multiples, words) {
+let loopyLighthouse = function(range, multiples, words) {
   for (let i = range[0]; i <= range[1]; i++) {
     let num = "";
-    num += (!(i % multiples[0])) ? words[0] : "";
-    num += (!(i % multiples[1])) ? words[1] : "";
-    num = (num === "") ? i : num;
+    for (let j = 0; j < multiples.length; j++)
+      num += (!(i % multiples[j])) ? words[j] : "";
+    num = (num) ? num : i;
     console.log(num);
   }
-}
+};
